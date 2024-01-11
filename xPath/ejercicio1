@@ -1,17 +1,26 @@
-1-//máquina
+1. Nombre del propietario de la agenda.
 
-2-//hardware
+/agenda/propietario/identificadores/nombre
 
-3-//config
+2. Teléfono de casa del propietario.
 
-4-//fabricante
+/agenda/propietario/telefonos/casa
 
-5-//disco
+3. Nombres y apellidos de los contactos de la agenda.
 
-6-//ip
+//identificadores
 
-7-//máquina/@nome
+4. Nombre e identificador de cada contacto.
 
-8-//equipos/máquina[hardware/gravadora[@tipo="DVD"]]//@nome
+//contactos/persona/@id
+//coctactos/persona/nombre
 
-9-//equipos/máquina[@nome='GALILEO']/config/OS
+
+5. Datos del contacto con identificador p02.
+
+/agenda/contactos/persona[@id="p02"]
+
+
+6. Identificadores de los contactos que tienen móvil.
+
+/agenda/contactos/persona/@id

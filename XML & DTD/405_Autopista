@@ -1,0 +1,54 @@
+<!DOCTYPE paneles [
+  <!ELEMENT paneles (evento+)>
+  <!ELEMENT evento (via, pk, retencion, sentido, carrilescortados?)>
+  <!ATTLIST evento
+            tipo CDATA #REQUIRED
+            fecha CDATA #IMPLIED>
+  
+  <!ELEMENT via (nombre, ref, origen, destino, (doble | sentido), carriles)>
+  <!ELEMENT doble EMPTY>
+  <!ELEMENT sentido (#PCDATA)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT ref (#PCDATA)>
+  <!ELEMENT origen (#PCDATA)>
+  <!ELEMENT destino (#PCDATA)>
+  <!ELEMENT carriles (#PCDATA)>
+  
+  <!ELEMENT retencion EMPTY>
+  <!ATTLIST retencion
+            long CDATA #REQUIRED>
+  
+  <!ELEMENT carrilescortados EMPTY>
+  <!ATTLIST carrilescortados
+            valor (1 | 2 | 3 | 4) #REQUIRED>
+]>
+
+<paneles>
+  <evento tipo="obras" fecha="2024-01-30">
+    <via>
+      <nombre>M-30</nombre>
+      <ref>KM-15</ref>
+      <origen>Madrid</origen>
+      <destino>Alcorcón</destino>
+      <doble/>
+      <carriles>3</carriles>
+    </via>
+    <pk>150</pk>
+    <retencion long="5"/>
+    <sentido>Trabajos en progreso</sentido>
+    <carrilescortados valor="2"/>
+  </evento>
+
+  <evento tipo="accidente">
+    <via>
+      <nombre>A-4</nombre>
+      <ref>KM-80</ref>
+      <origen>Sevilla</origen>
+      <destino>Córdoba</destino>
+      <carriles>2</carriles>
+    </via>
+    <pk>80</pk>
+    <retencion long="10"/>
+    <carrilescortados valor="1"/>
+  </evento>
+</paneles>

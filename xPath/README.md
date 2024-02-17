@@ -2,6 +2,6 @@
 
 ## DAW (tarde)
 
-Me resultó complicado arrancar con los ejercicios de xQuery. Me apoyé bastante en los ejercicios resueltos de la wiki, junto a otros que encontré para moldearlos y adaptarlos a estos ejercicios. 
-Además, para algunos de los ejercicios, necesité ayuda de ChatGPT cuando me encontraba atascado. 
-En particular, el apartado 7 del ejercicio de Tutoriales no he sido capaz de realizarlo.
+Ejercicios realizados: Equipamento informático (básico), Agenda, Ciclos, Inventario, ies, Universidad
+Los ejercicios me parecieron asequibles aunque en el 5 del ies tuve que consultar con los compañeros y chatGPT porque no me salia,
+tambien en el ejercicio de unviersidad necesite consultar internet y chatGPT a partir del 11 

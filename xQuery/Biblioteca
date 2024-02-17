@@ -30,21 +30,6 @@ return
 4. Una lista HTML con el título de los libros de la editorial O'Reilly Media ordenados por título.
 
 
-<html>
-  <head>
-    <title>Libros de O'Reilly Media</title>
-  </head>
-  <body>
-    <ul>{
-      for $libro in /biblioteca/libros/libro[editorial = 'O''Reilly Media']
-      order by $libro/titulo
-      return
-        <li>{data($libro/titulo)}</li>
-    }</ul>
-  </body>
-</html>
-
-
 
 5. Título y editorial de los libros de 2018 y 2019.
 * Los datos de cada libro deben estar dentro de un elemento <libro>.

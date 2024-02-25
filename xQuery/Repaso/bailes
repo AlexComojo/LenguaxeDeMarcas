@@ -58,3 +58,45 @@ return $baile
 for $baile in //bailes/baile
 where contains ($baile/profesor/text(), "Lozano")
 return $baile/nombre/text()
+
+--- Obtener el precio del baile con el precio mas caro
+
+max(
+  for $baile in //bailes/baile
+  return $baile/precio/text()
+)
+
+--- Obtener el precio y el nombre del bile con el precio mas caro
+
+let $max := max(
+  for $baile in //bailes/baile
+  return $baile/precio/text()
+)
+for $baile in //bailes/baile
+where $baile/precio = $max
+return 
+<baile>
+  <nombre>{data($baile/nombre)}</nombre>
+  <precio>{data($baile/precio)}</precio>
+</baile>
+
+--- Obtener elprecio del baile con el precio mas barato
+
+min(
+  for $baile in //bailes/baile
+  return $baile/precio/text()
+)
+
+--- Obtener el precio y el nombre del baile con el precio mas barato
+
+let $min := min(
+  for $baile in //bailes/baile
+  return $baile/precio/text()
+)
+for $baile in //bailes/baile
+where $baile/precio = $min
+return 
+<baile>
+  <nombre>{data($baile/nombre)}</nombre>
+  <precio>{data($baile/precio)}</precio>
+</baile>

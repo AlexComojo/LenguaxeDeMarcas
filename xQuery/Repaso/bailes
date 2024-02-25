@@ -100,3 +100,24 @@ return
   <nombre>{data($baile/nombre)}</nombre>
   <precio>{data($baile/precio)}</precio>
 </baile>
+
+
+--- Obten la suma del precio de todas las clases.
+
+sum(for $baile in //bailes/baile
+return $baile/precio * $baile/plazas
+)
+
+--- Obten la suma del precio de todas las clases, teniendo en cuenta su moneda.
+
+sum(
+(for $baile in //bailes/baile
+where $baile/precio/@moneda = "euro"
+return $baile/precio * $baile/plazas),
+
+(sum (for $baile in //bailes/baile
+where $baile/precio/@moneda = "dolares"
+return ($baile/precio * $baile/plazas) * 0.85))
+)
+
+

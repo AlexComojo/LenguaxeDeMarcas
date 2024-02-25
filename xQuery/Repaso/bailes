@@ -1,9 +1,9 @@
----Muestra el nombre de todos los bailes.
+--- Muestra el nombre de todos los bailes.
 
 for $baile in //bailes/baile/nombre/text()
 return $baile
 
----Muestra el nombre y precio de todos los bailes.
+--- Muestra el nombre y precio de todos los bailes.
 
 for $baile in //bailes/baile
 return
@@ -12,7 +12,7 @@ return
   <precio>{$baile/precio/text()}</precio>
 </baile>
 
----Muestra el nombre y precio de todos los bailes donde su precio se mayor que 40.
+--- Muestra el nombre y precio de todos los bailes donde su precio se mayor que 40.
 
 for $baile in //bailes/baile
 where $baile/number(precio) > 40
@@ -22,13 +22,13 @@ return
   <precio>{$baile/precio/text()}</precio>
 </baile>
 
----Mostrar todos los bailes, excepto el 3 y 5.
+--- Mostrar todos los bailes, excepto el 3 y 5.
 
 for $baile in //bailes/baile
 where $baile/@id != 3 and $baile/@id != 5
 return $baile
 
----Mostrar profesores que den clases de bailes por una cuota mensual.
+--- Mostrar profesores que den clases de bailes por una cuota mensual.
 
 for $baile in //bailes/baile
 where $baile/precio/@cuota = "mensual"

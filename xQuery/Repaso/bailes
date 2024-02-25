@@ -120,4 +120,33 @@ where $baile/precio/@moneda = "dolares"
 return ($baile/precio * $baile/plazas) * 0.85))
 )
 
+--- Obtener el dia, mes y año de los bailes mensuales, tanto del comienzo como del final
+
+for $baile in //bailes/baile
+where $baile/precio/@cuota = "mensual"
+return
+<baile>
+  <comienzo>
+    <dia>{day-from-date($baile/comienzo)}</dia>
+    <mes>{month-from-date($baile/comienzo)}</mes>
+    <anio>{year-from-date($baile/comienzo)}</anio>
+  </comienzo>
+  
+  <fin>
+    <dia>{day-from-date($baile/fin)}</dia>
+    <mes>{month-from-date($baile/fin)}</mes>
+    <anio>{year-from-date($baile/fin)}</anio>
+  </fin>
+</baile>
+
+--- Obtener los bailes que tengan mas de 100 dias de diferencia
+
+for $baile in //bailes/baile
+where days-from-duration(xs:date($baile/fin)-xs:date($baile/comienzo)) > 100
+return days-from-duration(xs:date($baile/fin)-xs:date($baile/comienzo))
+
+--- Obtener la diferencia de dias del comiendo del baile con la fehca actual
+
+for $baile in //bailes/baile
+return days-from-duration(current-date()-xs:date($baile/comienzo))
 

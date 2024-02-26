@@ -14,9 +14,9 @@ return
 * Se debe obtener únicamente los datos, sin etiquetas.
 
 
-for $libro in /biblioteca/libros/libro[paginas < 400]
-return
-  data($libro/titulo)
+for $libro in /biblioteca/libros/libro
+where $libro/number(paginas) < 400
+return $libro/paginas/text()
 
 
 3. La cantidad de libros de más de 400 páginas.

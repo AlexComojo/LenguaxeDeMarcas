@@ -39,6 +39,16 @@ distinct-values(//categoria) ! <categoriadistintas>{.}</categoriadistintas>
 
 7. nombres y apellidos de los autores eliminando los repetidos y acompañar cada nombre con todos sus tutoriales, ordenados alfabeticametne por nombre de autor; cada autor en una etiqueta <autor> que contendrá una etiqueta <nombreyapellidos> y una etiqueta <titulo>.
 
+for $autor in distinct-values (//tutoriales/tutorial/autor)
+for $titulo in //tutoriales/tutorial/titulo
+order by $autor ascending
+return 
+<autor>
+<nombreyapellidos>
+{$autor}
+</nombreyapellidos>
+{$titulo}
+</autor>
 
 8. la media de vistas de los tutoriales, dentro de una etiqueta <media>.
 
